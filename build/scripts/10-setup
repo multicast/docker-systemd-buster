@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -x
+export DEBIAN_FRONTEND=noninteractive
+
+apt-get install --no-install-recommends -y \
+ dbus \
+ libpam-systemd \
+ systemd \
+ systemd-sysv
+
+## use less for systemctl, journalctl
+echo '#export SYSTEMD_EDITOR='     >  /etc/profile.d/systemd-vars.sh
+echo 'export SYSTEMD_PAGER=less'   >> /etc/profile.d/systemd-vars.sh
+echo '#export SYSTEMD_LESS=FRSXMK' >> /etc/profile.d/systemd-vars.sh
+
+## disable tty1
+systemctl mask getty@tty1.service
+## disable systemd-timesyncd
+systemctl mask systemd-timesyncd.service
+
+## from centos/systemd image:
+cd /lib/systemd/system/sysinit.target.wants/ && {
+  for i in *; do
+    [ $i == systemd-tmpfiles-setup.service ] || rm -f $i;
+  done
+}
+
+rm -f /etc/systemd/system/*.wants/*
+rm -f /lib/systemd/system/anaconda.target.wants/*
+rm -f /lib/systemd/system/basic.target.wants/*
+rm -f /lib/systemd/system/local-fs.target.wants/*
+rm -f /lib/systemd/system/multi-user.target.wants/*
+rm -f /lib/systemd/system/sockets.target.wants/*initctl*
+rm -f /lib/systemd/system/sockets.target.wants/*udev*
+rm -f /lib/systemd/system/graphical.target.wants/systemd-update-utmp-runlevel.service
