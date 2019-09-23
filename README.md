@@ -120,7 +120,7 @@ You can define environment variables via `--env` argument found in the following
     ii  libdevmapper1.02.1:amd64   2:1.02.155-3                amd64        Linux Kernel Device Mapper userspace library
     ii  libelf1:amd64              0.176-1.1                   amd64        library to read and write ELF files
     ii  liberror-perl              0.17027-2                   all          Perl module for error/exception handling in an OO-ish way
-    ii  libexpat1:amd64            2.2.6-2                     amd64        XML parsing C library - runtime library
+    ii  libexpat1:amd64            2.2.6-2+deb10u1             amd64        XML parsing C library - runtime library
     ii  libext2fs2:amd64           1.44.5-1+deb10u1            amd64        ext2/ext3/ext4 file system libraries
     ii  libfdisk1:amd64            2.33.1-0.1                  amd64        fdisk partitioning library
     ii  libffi6:amd64              3.2.1-9                     amd64        Foreign Function Interface library runtime
