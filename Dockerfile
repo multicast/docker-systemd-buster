@@ -14,4 +14,4 @@ RUN run-parts --report --exit-on-error /root/build/scripts && \
 
 ENTRYPOINT ["/sbin/entrypoint.sh"]
 
-CMD ["/bin/bash"]
+CMD ["/sbin/init"]
