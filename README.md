@@ -134,7 +134,7 @@ You can define environment variables via `--env` argument found in the following
     ii  libgssapi-krb5-2:amd64     1.17-3                      amd64        MIT Kerberos runtime libraries - krb5 GSS-API Mechanism
     ii  libhogweed4:amd64          3.4.1-1                     amd64        low level cryptographic library (public-key cryptos)
     ii  libidn11:amd64             1.33-2.2                    amd64        GNU Libidn library, implementation of IETF IDN specifications
-    ii  libidn2-0:amd64            2.0.5-1                     amd64        Internationalized domain names (IDNA2008/TR46) library
+    ii  libidn2-0:amd64            2.0.5-1+deb10u1             amd64        Internationalized domain names (IDNA2008/TR46) library
     ii  libip4tc0:amd64            1.8.2-4                     amd64        netfilter libip4tc library
     ii  libjson-c3:amd64           0.12.1+ds-2                 amd64        JSON manipulation library - shared library
     ii  libk5crypto3:amd64         1.17-3                      amd64        MIT Kerberos runtime libraries - Crypto Library
